@@ -27,7 +27,7 @@ import axios from 'axios'
 
         const handleDelete = async (id)=>{
             try{
-                const response = await axios.delete(`http://127.0.0.1:3857/api/reviews/${id}`,{
+                const response = await axios.delete(`https://sharespace-xwig.onrender.com/api/reviews/${id}`,{
                     headers:{
                         Authorization:localStorage.getItem('token')
                     }
@@ -51,7 +51,7 @@ import axios from 'axios'
         const handleUpdate = async(e)=>{
             e.preventDefault()
             try{
-                const response = await  axios.put(`http://127.0.0.1:3857/api/reviews/${_id}`,{rating:erating,comment:ecomment},{
+                const response = await  axios.put(`https://sharespace-xwig.onrender.com/api/reviews/${_id}`,{rating:erating,comment:ecomment},{
                     headers:{
                         Authorization: localStorage.getItem('token')
                     }

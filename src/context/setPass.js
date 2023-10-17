@@ -46,7 +46,7 @@ import { showAlert, showAlert2 } from "../components/Auth/Login"
                 if(Object.keys(errors).length ===0){
                     setFormErrors({})
                     if(password === confirm){
-                        const response = await axios.post(`http://127.0.0.1:3857/api/editPassword`,{email,password})
+                        const response = await axios.post(`https://sharespace-xwig.onrender.com/api/editPassword`,{email,password})
     
                             if(response.status === 200){
                                 console.log(response.data)

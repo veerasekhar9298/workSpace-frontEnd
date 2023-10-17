@@ -121,7 +121,7 @@ registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview)
 
           if(Object.keys(errors).length ===0){
 
-            const response = await axios.post('http://127.0.0.1:3857/api/workSpace', formData, {
+            const response = await axios.post('https://sharespace-xwig.onrender.com/api/workSpace', formData, {
               headers: {
                 'Content-Type': 'multipart/form-data', 
                 Authorization: localStorage.getItem('token')
@@ -178,7 +178,7 @@ registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview)
 
           if(Object.keys(errors).length ===0){
               console.log('edit triggering request',formData)
-            const response = await axios.put(`http://127.0.0.1:3857/api/workSpace/${selectedSpace._id}`, formData, {
+            const response = await axios.put(`https://sharespace-xwig.onrender.com/api/workSpace/${selectedSpace._id}`, formData, {
               headers: {
                 'Content-Type': 'multipart/form-data', 
                 Authorization: localStorage.getItem('token')

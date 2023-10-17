@@ -25,7 +25,7 @@ function SpaceSlot(props) {
 
     const geteditDetails = async ()=>{
         try{
-          const response = await axios.get(`http://127.0.0.1:3857/api/editspaces/${_id}`,{
+          const response = await axios.get(`https://sharespace-xwig.onrender.com/api/editspaces/${_id}`,{
             headers:{
               Authorization: localStorage.getItem('token')
             }
@@ -60,7 +60,7 @@ function SpaceSlot(props) {
   const handleEdit = async ()=>{
         try{
 
-            const response = await axios.put(`http://127.0.0.1:3857/api/spaces/${_id}`,editForm,{
+            const response = await axios.put(`https://sharespace-xwig.onrender.com/api/spaces/${_id}`,editForm,{
                 headers: {
                     Authorization:localStorage.getItem('token')
                   }
@@ -78,7 +78,7 @@ function SpaceSlot(props) {
   const handleDelete = async ()=>{
       try{
 
-        const response = await axios.delete(`http://127.0.0.1:3857/api/spaces/${_id}`,{
+        const response = await axios.delete(`https://sharespace-xwig.onrender.com/api/spaces/${_id}`,{
             headers: {
                 Authorization:localStorage.getItem('token')
               }

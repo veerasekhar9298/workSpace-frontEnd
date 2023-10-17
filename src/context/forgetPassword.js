@@ -30,7 +30,7 @@ import { showAlert,showAlert2 } from "../components/Auth/Login";
 
                 if(Object.keys(errors).length ===0){
 
-                    const response = await axios.post(`http://127.0.0.1:3857/api/verfyEmail`,{email})
+                    const response = await axios.post(`https://sharespace-xwig.onrender.com/api/verfyEmail`,{email})
 
                 if(response.status ===200){
                     showAlert(response.data.msg)

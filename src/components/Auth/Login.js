@@ -11,7 +11,7 @@ import Swal from 'sweetalert2'
 
 export const getUser = async (workSpacedispatch) => {
     try {
-        const response2 = await axios.get("http://127.0.0.1:3857/api/user/Account", {
+        const response2 = await axios.get("https://sharespace-xwig.onrender.com/api/user/Account", {
             headers: {
                 Authorization: localStorage.getItem('token')
             }
@@ -124,7 +124,7 @@ function Login (props){
             runValidations()
             if(Object.keys(errors).length === 0){
                     console.log('triggering')
-                const response = await axios.post("http://127.0.0.1:3857/api/user/Login",loginData)
+                const response = await axios.post("https://sharespace-xwig.onrender.com/api/user/Login",loginData)
                 console.log(response)
                 if(response.status === 200){
                     showAlert("Login Successfull")

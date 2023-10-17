@@ -53,7 +53,7 @@ import axios from "axios"
                 try{
                     runValidations()
                     if(Object.keys(errors).length ===0){
-                        const response = await axios.post(`http://127.0.0.1:3857/api/spaceType`,{...spaceData,quantity:parseInt(spaceData.quantity),price:parseInt(spaceData.price)},{
+                        const response = await axios.post(`https://sharespace-xwig.onrender.com/api/spaceType`,{...spaceData,quantity:parseInt(spaceData.quantity),price:parseInt(spaceData.price)},{
                         headers: {
                           Authorization:localStorage.getItem('token')
                         }}) 

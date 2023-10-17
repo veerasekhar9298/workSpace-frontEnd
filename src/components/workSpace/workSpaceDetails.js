@@ -27,7 +27,7 @@ import ReviewWorkSpace from "./Reviews-Work";
 
         const getDetails = async ()=>{
             try{
-                const response = await axios.get(`http://127.0.0.1:3857/api/workSpace/${id}`,{
+                const response = await axios.get(`https://sharespace-xwig.onrender.com/api/workSpace/${id}`,{
                     headers: {
                       Authorization:localStorage.getItem('token')
                     }})
@@ -107,7 +107,7 @@ import ReviewWorkSpace from "./Reviews-Work";
 // console.log(workSpace)
         const analysis = async()=>{
             try{
-                const response = await axios.get(`http://127.0.0.1:3857/api/workSpaceanalysis/${id}`,{
+                const response = await axios.get(`https://sharespace-xwig.onrender.com/api/workSpaceanalysis/${id}`,{
                     headers:{
                         Authorization:localStorage.getItem('token')
                     }
@@ -126,7 +126,7 @@ import ReviewWorkSpace from "./Reviews-Work";
         const getReviews = async()=>{
 
             try{
-                const response = await axios.get(`http://127.0.0.1:3857/api/reviews/${id}`,{
+                const response = await axios.get(`https://sharespace-xwig.onrender.com/api/reviews/${id}`,{
                     headers:{
                         Authorization: localStorage.getItem('token')
                     }
@@ -158,11 +158,11 @@ import ReviewWorkSpace from "./Reviews-Work";
     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[desks,cabin])
     useEffect(()=>{
-            const req1= axios.get(`http://127.0.0.1:3857/api/spaceType/${id}`,{
+            const req1= axios.get(`https://sharespace-xwig.onrender.com/api/spaceType/${id}`,{
                 headers: {
                   Authorization:localStorage.getItem('token')
                 }})
-            const req2 = axios.get(`http://127.0.0.1:3857/api/spaces/${id}`,{
+            const req2 = axios.get(`https://sharespace-xwig.onrender.com/api/spaces/${id}`,{
                 headers: {
                   Authorization:localStorage.getItem('token')
                 }})

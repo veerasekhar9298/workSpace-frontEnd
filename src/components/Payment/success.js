@@ -15,7 +15,7 @@ const Success = () => {
 
     const updatepaymentStatus = async ()=>{
             try{
-                const response = await axios.put(`http://127.0.0.1:3857/api/updatePaymentStatus?transaction=${transaction}&booking=${booking}`,{status:"paid"},{
+                const response = await axios.put(`https://sharespace-xwig.onrender.com/api/updatePaymentStatus?transaction=${transaction}&booking=${booking}`,{status:"paid"},{
                         headers: {
                           Authorization:localStorage.getItem('token')
                         }})

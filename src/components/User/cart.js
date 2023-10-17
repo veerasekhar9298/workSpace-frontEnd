@@ -7,7 +7,7 @@ import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardText, MDBCol, MDBCon
 import empty from"../Payment/empty.webp"
 export const getCartItems = async (workSpacedispatch) => {
   try {
-    const response = await axios.get("http://127.0.0.1:3857/api/all-cart-Items", {
+    const response = await axios.get("https://sharespace-xwig.onrender.com/api/all-cart-Items", {
       headers: {
         Authorization: localStorage.getItem('token')
       }
@@ -35,7 +35,7 @@ function Cart(props) {
 
   const handleRemoveItem = async(id)=>{
     try{
-        const response = await axios.delete(`http://127.0.0.1:3857/api/remove-cart-Item/${id}`,{
+        const response = await axios.delete(`https://sharespace-xwig.onrender.com/api/remove-cart-Item/${id}`,{
           headers:{
             Authorization: localStorage.getItem('token')
           }
@@ -65,7 +65,7 @@ function Cart(props) {
         e.preventDefault()
           console.log(workSpaceState.cartItems.reduce((total, item) => total + item.price * item.quantity, 50))
             
-        const response = await axios.post('http://127.0.0.1:3857/api/create-checkout-session', {
+        const response = await axios.post('https://sharespace-xwig.onrender.com/api/create-checkout-session', {
             items:workSpaceState.cartItems,totalPrice:workSpaceState.cartItems.reduce((total, item) => total + item.price * item.quantity, 0)
           }, {
             headers: {
@@ -74,14 +74,14 @@ function Cart(props) {
       
           if(response.status ===200){
                 console.log(response.data,'checkout-session')
-                   await axios.delete(`http://127.0.0.1:3857/api/clear-cart-Items`,{
+                   await axios.delete(`https://sharespace-xwig.onrender.com/api/clear-cart-Items`,{
                     headers: {
                       Authorization: localStorage.getItem("token"),
                     },
                   })
                 const data = {userId:workSpaceState.userDetails._id,totalPrice:workSpaceState.cartItems.reduce((total, item) => total + item.price, 0),items:workSpaceState.cartItems}
 
-                const response2 = await axios.post(`http://127.0.0.1:3857/api/bookings`,data,{
+                const response2 = await axios.post(`https://sharespace-xwig.onrender.com/api/bookings`,data,{
                     headers: {
                       Authorization:localStorage.getItem('token')
                     }}) 

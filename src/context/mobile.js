@@ -37,7 +37,7 @@ import { showAlert,showAlert2 } from '../components/Auth/Login'
         try{
             runValidations()
             if(Object.keys(errors).length ===0){
-                const response = await axios.post(`http://127.0.0.1:3857/api/verfyMobile`,{number:'+91'+number})
+                const response = await axios.post(`https://sharespace-xwig.onrender.com/api/verfyMobile`,{number:'+91'+number})
 
                         if(response.status ===200){
                             showAlert(response.data.msg)
@@ -63,7 +63,7 @@ import { showAlert,showAlert2 } from '../components/Auth/Login'
         try{
             runValidations()
             if(Object.keys(errors).length ===0){
-                const response = await axios.post(`http://127.0.0.1:3857/api/verfyOtp`,{otp:parseInt(otp)})
+                const response = await axios.post(`https://sharespace-xwig.onrender.com/api/verfyOtp`,{otp:parseInt(otp)})
 
                     if(response.status ===200){
                         showAlert(response.data.msg)

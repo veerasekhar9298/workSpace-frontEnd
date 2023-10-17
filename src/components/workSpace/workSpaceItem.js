@@ -10,7 +10,7 @@
         const navigate = useNavigate()
 
         const handleDelete = (id)=>{
-            axios.delete(`http://127.0.0.1:3857/api/workSpace/${id}`,{
+            axios.delete(`https://sharespace-xwig.onrender.com/api/workSpace/${id}`,{
                 headers:{
                     Authorization: localStorage.getItem('token')
                 }

@@ -9,7 +9,7 @@ import UserWorkSpace from "./workspace";
  export const getWorkSpaces = async(workSpacedispatch,sort,filter)=>{
 
   try{
-      const response = await axios.get(`http://127.0.0.1:3857/api/workSpace?sort=${sort}&filter=${filter}`,{
+      const response = await axios.get(`https://sharespace-xwig.onrender.com/api/workSpace?sort=${sort}&filter=${filter}`,{
           headers:{
               Authorization:localStorage.getItem('token')
           }

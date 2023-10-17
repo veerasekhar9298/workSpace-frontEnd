@@ -40,7 +40,7 @@ import { faWifi, faCoffee, faParking, faShield } from '@fortawesome/free-solid-s
 
         const getDetails = async ()=>{
                 try{    
-                    const response = await axios.get(`http://127.0.0.1:3857/api/workSpace/${id}`,{
+                    const response = await axios.get(`https://sharespace-xwig.onrender.com/api/workSpace/${id}`,{
                         headers: {
                           Authorization:localStorage.getItem('token')
                         }}) 
@@ -58,7 +58,7 @@ import { faWifi, faCoffee, faParking, faShield } from '@fortawesome/free-solid-s
         const getReviews = async()=>{
 
           try{
-              const response = await axios.get(`http://127.0.0.1:3857/api/reviews/${id}`,{
+              const response = await axios.get(`https://sharespace-xwig.onrender.com/api/reviews/${id}`,{
                   headers:{
                       Authorization: localStorage.getItem('token')
                   }
@@ -93,12 +93,12 @@ import { faWifi, faCoffee, faParking, faShield } from '@fortawesome/free-solid-s
         
 
         useEffect(()=>{
-            const req1= axios.get(`http://127.0.0.1:3857/api/spaceType/${id}`,{
+            const req1= axios.get(`https://sharespace-xwig.onrender.com/api/spaceType/${id}`,{
                 headers: {
                   Authorization:localStorage.getItem('token')
                 }})
            
-            const req2 = axios.get(`http://127.0.0.1:3857/api/spaces/${id}`,{
+            const req2 = axios.get(`https://sharespace-xwig.onrender.com/api/spaces/${id}`,{
                 headers: {
                   Authorization:localStorage.getItem('token')
                 }})
@@ -146,7 +146,7 @@ import { faWifi, faCoffee, faParking, faShield } from '@fortawesome/free-solid-s
           if (isChecked) {
             if(startDate && endDate){
               await axios.post(
-                "http://127.0.0.1:3857/api/add-to-cart", // Update the URL to your backend endpoint for adding to the cart
+                "https://sharespace-xwig.onrender.com/api/add-to-cart", // Update the URL to your backend endpoint for adding to the cart
                 {
                   itemId: objectId,
                   name:'desk',
@@ -167,7 +167,7 @@ import { faWifi, faCoffee, faParking, faShield } from '@fortawesome/free-solid-s
             }
           } else {
             await axios.post(
-              "http://127.0.0.1:3857/api/remove-to-cart", // Update the URL to your backend endpoint for adding to the cart
+              "https://sharespace-xwig.onrender.com/api/remove-to-cart", // Update the URL to your backend endpoint for adding to the cart
               {
                 itemId: objectId,
                 productId: 9961
@@ -184,7 +184,7 @@ import { faWifi, faCoffee, faParking, faShield } from '@fortawesome/free-solid-s
           if (isChecked) {
             if(startDate && endDate){
               await axios.post(
-                "http://127.0.0.1:3857/api/add-to-cart", // Update the URL to your backend endpoint for adding to the cart
+                "https://sharespace-xwig.onrender.com/api/add-to-cart", // Update the URL to your backend endpoint for adding to the cart
                 {
                   itemId: objectId,
                   name:'cabin',
@@ -204,7 +204,7 @@ import { faWifi, faCoffee, faParking, faShield } from '@fortawesome/free-solid-s
             }
           } else {
             await axios.post(
-              "http://127.0.0.1:3857/api/remove-to-cart", // Update the URL to your backend endpoint for adding to the cart
+              "https://sharespace-xwig.onrender.com/api/remove-to-cart", // Update the URL to your backend endpoint for adding to the cart
               {
                 itemId: objectId,
                 productId: 9962

@@ -37,7 +37,7 @@ import ReviewItem from "./reviewItem";
       const handleSubmit = async (e)=>{
           e.preventDefault()
             try{
-                const response = await axios.post(`http://127.0.0.1:3857/api/reviews/${id}`,{rating,comment},{
+                const response = await axios.post(`https://sharespace-xwig.onrender.com/api/reviews/${id}`,{rating,comment},{
                     headers:{
                         Authorization: localStorage.getItem('token')
                     }

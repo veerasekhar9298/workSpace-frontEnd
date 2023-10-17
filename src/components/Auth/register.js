@@ -85,7 +85,7 @@ import Swal from 'sweetalert2'
              runValidations()
              if(Object.keys(errors).length ===0){
                 console.log(registerData)
-                const response = await axios.post(`http://127.0.0.1:3857/api/usersRegister`, registerData);
+                const response = await axios.post(`https://sharespace-xwig.onrender.com/api/usersRegister`, registerData);
                 console.log(response.data)
                 if(response.status===200){
                     showAlert(response.data.msg)

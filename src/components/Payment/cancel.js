@@ -9,7 +9,7 @@ const Cancel = () => {
 
     const cancelBooking = async ()=>{
         try{
-          const response = axios.delete(`http://127.0.0.1:3857/api/updateBookingStatus?booking=${booking}`,{
+          const response = axios.delete(`https://sharespace-xwig.onrender.com/api/updateBookingStatus?booking=${booking}`,{
             headers:{
               Authorization: localStorage.getItem('token')
             }

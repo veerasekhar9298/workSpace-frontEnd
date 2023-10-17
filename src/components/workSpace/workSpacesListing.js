@@ -16,7 +16,7 @@ import RevenueChart from "./revenue-Chart"
         const {workSpaceState,workSpacedispatch} = useContext(workSpaceContext)
        
     useEffect(()=>{
-            axios.get(`http://127.0.0.1:3857/api/workSpace`,{
+            axios.get(`https://sharespace-xwig.onrender.com/api/workSpace`,{
                 headers: {
                   Authorization:localStorage.getItem('token')
                 }})
@@ -26,7 +26,7 @@ import RevenueChart from "./revenue-Chart"
               .catch((err)=>{
                     console.log(err)
               })
-            axios.get(`http://127.0.0.1:3857/api/allworkSpaceAnalysis`,{
+            axios.get(`https://sharespace-xwig.onrender.com/api/allworkSpaceAnalysis`,{
                 headers: {
                   Authorization:localStorage.getItem('token')
                 }})
@@ -37,7 +37,7 @@ import RevenueChart from "./revenue-Chart"
               .catch((err)=>{
                     console.log(err)
               })
-            axios.get(`http://127.0.0.1:3857/api/revenueallworkSpaceAnalysis`,{
+            axios.get(`https://sharespace-xwig.onrender.com/api/revenueallworkSpaceAnalysis`,{
                 headers: {
                   Authorization:localStorage.getItem('token')
                 }})

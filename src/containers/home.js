@@ -13,7 +13,7 @@ import { useContext, useEffect } from "react"
 
 
         try{
-            const response = await axios.get(`http://127.0.0.1:3857/api/publicworkSpaces`)
+            const response = await axios.get(`https://sharespace-xwig.onrender.com/api/publicworkSpaces`)
             if(response.status===200){
               console.log(response.data)
                
