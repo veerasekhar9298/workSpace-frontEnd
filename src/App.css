@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+a {
+  text-decoration: none;
+}
+/* CustomCheckbox.css */
+.custom-checkbox input[type="checkbox"]:checked + .custom-control-label::before {
+  background-color: green;
+  border-color: green;
+}
+
+.custom-checkbox input[type="checkbox"]:not(:checked) + .custom-control-label::before {
+  background-color: red;
+  border-color: red;
+}
