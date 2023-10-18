@@ -1,70 +1,27 @@
-# Getting Started with Create React App
+# Share Space - Your Remote Workspace Solution
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Share Space** provides a platform for freelancers and corporate companies to book workspaces, create remote workspace environments, and set up full offices in the location of their choice.
 
-## Available Scripts
+## Project Overview
 
-In the project directory, you can run:
+Share Space is a versatile platform that offers various features to its users. It has been built using the following technologies:
 
-### `npm start`
+- Backend: Node.js and Express.js
+- Frontend: React
+- State Management: `useReducer` and `useContext`
+- Authentication: JWT for user authentication
+- Security: Bcrypt.js for password encryption
+- Role Management: To control user access and security
+- Payment Gateway: Integration with Stripe for payments
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Key Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Full Stack Technology**: Share Space is built using Node.js and Express.js on the backend, providing a robust and scalable foundation. The frontend is developed with React, ensuring a seamless and responsive user experience.
 
-### `npm test`
+- **State Management**: The project utilizes `useReducer` and `useContext` for efficient state management, resulting in smooth and responsive user interactions.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Secure User Authentication**: A secure user authentication mechanism is implemented using JWT for authentication and bcrypt.js for password encryption.
 
-### `npm run build`
+- **Role Management**: Share Space has role management functionality to control user access and enhance security within the platform.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **Payment Gateway**: Stripe is integrated to provide a reliable and user-friendly payment gateway, making it easy for users to book workspaces and services.
