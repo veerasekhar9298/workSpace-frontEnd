@@ -21,7 +21,7 @@ import { useContext, useEffect } from "react"
             }
       
         }catch(e){
-      
+              console.log(e)
         }
       }
 
