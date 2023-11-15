@@ -1,4 +1,4 @@
- const initialState  = {}
+ const initialState  = {workspaces:[],ownerSpacesAnalysis:[],publicspaces:[],ownerRevenue:{}}
 
  const workSpaceReducer = (state = initialState,action) =>{
 

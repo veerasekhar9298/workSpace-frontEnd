@@ -26,7 +26,7 @@ import VerfiyBooking from "./containers/verfiyBook";
 import ForgetPassword from "./context/forgetPassword";
 import MobileVerify from "./context/mobile";
 import ResetPassword from "./context/setPass";
-
+import { getAccountDetails } from "./containers/profile";
 
   export const workSpaceContext = createContext()
 
@@ -188,7 +188,7 @@ function App() {
           setIslogged(true)
           getUser(workSpacedispatch)
           
-          
+          getAccountDetails(workSpacedispatch)
           getAllusers(workSpacedispatch)
           getBookings(workSpacedispatch)
           if(workSpaceState.userDetails.role=== 'user'){

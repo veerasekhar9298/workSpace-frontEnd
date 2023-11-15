@@ -115,6 +115,8 @@ registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview)
         workSpaceData.files.forEach((file) => {
           formData.append(`files`, file);
         });
+
+        console.log(formData,'adding workSpace')
         
         try {
           runValidations()

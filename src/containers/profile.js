@@ -20,6 +20,34 @@ import interactionPlugin from "@fullcalendar/interaction";
  import { Modal, Button } from 'react-bootstrap';
 import { showAlert, showAlert2 } from '../components/Auth/Login';
 
+export   const getAccountDetails = async (workSpacedispatch)=>{
+  try{
+      // const response = await axios.get(`http://127.0.0.1:3857/api/user/profile`,{
+      //     headers:{
+      //         Authorization:localStorage.getItem('token') 
+      //     }
+      // })
+      const response = await Axiosinstance.get(`/api/user/profile`,{
+          headers:{
+              Authorization:localStorage.getItem('token') 
+          }
+      })
+      if(response.status === 200){
+          console.log(response.data,'profile page')
+          // setProfile(response.data)
+          workSpacedispatch({type:"PROFILE",payload:response.data})
+
+      }
+
+  }catch(e){
+      console.log(e)
+
+  }
+}
+  
+
+
+
  function ProfileAccount (props){
 
     const {workSpaceState,workSpacedispatch} = useContext(workSpaceContext)
@@ -68,7 +96,7 @@ console.log(calenderData,"calender DAta")
       };
     // console.log(profile)
 
-    const getAccountDetails = async ()=>{
+    const getAccountDetails = async (workSpacedispatch)=>{
         try{
             // const response = await axios.get(`http://127.0.0.1:3857/api/user/profile`,{
             //     headers:{
@@ -126,7 +154,7 @@ console.log(calenderData,"calender DAta")
 
 
     useEffect(()=>{
-        getAccountDetails()
+        getAccountDetails(workSpacedispatch)
     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 
