@@ -169,7 +169,7 @@ console.log(calenderData,"calender DAta")
     
     return <>
         <section style={{ backgroundColor: '#eee' }} className='my-3'>
-      <MDBContainer className="py-5">
+      {profile && <MDBContainer className="py-5">
     
         <MDBRow>
           <MDBCol lg="4">
@@ -297,7 +297,7 @@ console.log(calenderData,"calender DAta")
           </MDBCol>
         </MDBRow>
         
-      </MDBContainer>
+      </MDBContainer>}
 
 
       <Modal show={showModal} onHide={handleCloseModal}>

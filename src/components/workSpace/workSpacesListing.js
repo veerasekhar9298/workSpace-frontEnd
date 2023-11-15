@@ -57,7 +57,7 @@ import RevenueChart from "./revenue-Chart"
             <div className="col-lg-7">
                     <h4 className="display-6 text-center mb-4"> Listing of the WorkSpaces</h4>
                     {
-                        workSpaceState.workSpaces.map((ele,i)=>{
+                       workSpaceState.workSpaces &&  workSpaceState.workSpaces.map((ele,i)=>{
                             return <WorkSpaceItem {...ele} key = {i} />
                         })
                     }
