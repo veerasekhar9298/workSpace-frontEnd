@@ -3,6 +3,7 @@ import {  useState,useContext, useEffect, } from 'react'
 import owner from "../Payment/fun-3d-cartoon-illustration-indian-businessman.jpg"
 import owner2 from '../Payment/editForm.jpg'
 import { FilePond,  registerPlugin } from 'react-filepond'
+import {Spinner} from 'react-bootstrap'
 import 'filepond/dist/filepond.min.css'
 import FilePondPluginImageExifOrientation from 'filepond-plugin-image-exif-orientation'
 import FilePondPluginImagePreview from 'filepond-plugin-image-preview'
@@ -10,7 +11,7 @@ import 'filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css'
 import axios from 'axios'
 import { workSpaceContext } from '../../App'
 import { showAlert, showAlert2 } from '../Auth/Login'
-
+import { useNavigate } from 'react-router-dom'
 registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview)
 
 
@@ -18,6 +19,7 @@ registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview)
 
   function WorkSpaceForm (props){
 
+      const navigate = useNavigate()
       const {isEdit,selectedSpace} = props
 
     const {workSpaceState,workSpacedispatch} = useContext(workSpaceContext)
@@ -29,7 +31,7 @@ registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview)
     const [files, setFiles] = useState([])
 
       
-          
+    const [loading, setLoading] = useState(false);
 
 
 
@@ -122,7 +124,7 @@ registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview)
           runValidations()
 
           if(Object.keys(errors).length ===0){
-
+                setLoading(true)
             const response = await axios.post('https://sharespace-xwig.onrender.com/api/workSpace', formData, {
               headers: {
                 'Content-Type': 'multipart/form-data', 
@@ -130,21 +132,24 @@ registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview)
               },
             });
               if(response.status ===200){
+                setLoading(false)
                   workSpacedispatch({type:"OWNER_SPACES_ADD",payload:response.data})
                   showAlert('WorkSpace Added successfully')
+                  navigate('/allWorkSpaces')
                  resetForm()
               }
 
 
             setFormErrors({})
           }else{
+            
             setFormErrors(errors)
           }
           
           
         } catch (error) {
           showAlert2("Error in adding the workSpace")
-
+            setLoading(false)
           console.error('Error uploading data:', error);
 
 
@@ -231,7 +236,39 @@ registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview)
 
     return(
         <div className="row m-4">
+          {/* Blurred background */}
+        
             <div className="col-lg-6 fw-bold bg-success bg-opacity-25 rounded-5 shadow-lg p-5">
+            {loading && (
+          <div
+            style={{
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              background: 'rgba(255, 255, 255, 0.8)', // Semi-transparent white background for the blur effect
+              backdropFilter: 'blur(5px)', // Adjust the blur intensity as needed
+              zIndex: 1000, // Set a higher z-index to appear above other content
+            }}
+          />
+        )}
+
+        {/* Spinner with absolute positioning and conditional rendering based on loading state */}
+        {loading && (
+          <div
+            style={{
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              zIndex: 1001, // Set a higher z-index than the blurred background
+            }}
+          >
+            {/* Enlarged spinner */}
+            <Spinner animation="border" size="lg" />
+          </div>
+        )}
                 {isEdit? <h3 className='display-5 p-2 text-danger text-center my-3'> Edit  Your WorkSpace</h3>:<h3 className='display-5 p-2 text-danger text-center my-3'> Add  Your WorkSpace</h3>}
                 <form onSubmit={isEdit ? handleEdit :handleSubmit}>
                 <label> <span className='p-2'>Images</span> </label><FilePond
