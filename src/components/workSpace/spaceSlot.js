@@ -96,14 +96,22 @@ function SpaceSlot(props) {
 
   return (
     <div className="col-lg-1 m-3 text-center">
-      {' '}
+      {/* {' '}
       <input
         type="checkbox"
         className="form-check"
         style={{ width: '25px', height: '25px' }}
         checked={!isAvailable}
         readOnly
-      />{' '}
+      />{' '} */}
+      <label className="label">
+    <input  className="label__checkbox" checked={!isAvailable} type="checkbox" />
+    <span className="label__text">
+      <span className="label__check">
+        <i className="fa fa-check icon"></i>
+      </span>
+    </span>
+  </label>
       <p>{num}</p>
       <button className="btn btn-warning fw-bold my-2" onClick={handleShowModal}>
         Edit
@@ -118,7 +126,15 @@ function SpaceSlot(props) {
         </Modal.Header>
         <Modal.Body>
           <form>
-                <label className='fw-bold'> availability : <input type="checkbox" checked={editForm.isAvailable} onChange={(e)=>{setEditForm({...editForm,isAvailable:e.target.checked})}}/></label> <br/>
+                {/* <label className='fw-bold'> availability : <input type="checkbox" checked={editForm.isAvailable} onChange={(e)=>{setEditForm({...editForm,isAvailable:e.target.checked})}}/></label> <br/> */}
+                <label className="label fw-bold"> availability :
+<input  className="label__checkbox"  type="checkbox" checked={editForm.isAvailable} onChange={(e)=>{setEditForm({...editForm,isAvailable:e.target.checked})}} />
+<span className="label__text">
+  <span className="label__check">
+    <i className="fa fa-check icon"></i>
+  </span>
+</span>
+</label> <br/>
                 {!isAvailable && (<div><p>{spaceDetails.tenentId?.username}</p>
                 <p>{spaceDetails.tenentId?.email}</p>
                 <p>From:{new Date(BookingDetails?.startDate).toLocaleDateString()}</p>
@@ -140,3 +156,6 @@ function SpaceSlot(props) {
 }
 
 export default SpaceSlot;
+
+
+

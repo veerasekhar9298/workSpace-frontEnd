@@ -286,6 +286,7 @@ import { faWifi, faCoffee, faParking, faShield } from '@fortawesome/free-solid-s
                             (select ==="desk") && (<div className="m-4 p-2" >
                             {
                                 desks.map((ele,i)=>{
+                                      
                                     return <input key={i}   disabled={!ele.isAvailable}  checked={selectedDesk.includes(ele._id)}  defaultChecked={!ele.isAvailable} onChange={(e) => handleCheckboxChange(e, ele._id)} type="checkbox" className="m-2 p-2 " style={{ width: '30px', height: '30px', }}/>
                                 })
                             }

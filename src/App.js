@@ -27,7 +27,7 @@ import ForgetPassword from "./context/forgetPassword";
 import MobileVerify from "./context/mobile";
 import ResetPassword from "./context/setPass";
 import { getAccountDetails } from "./containers/profile";
-
+import 'font-awesome/css/font-awesome.min.css';
   export const workSpaceContext = createContext()
 
   function reducer (state,action){

@@ -20,6 +20,7 @@
     "chart.js": "^4.4.0",
     "filepond-plugin-image-exif-orientation": "^1.0.11",
     "filepond-plugin-image-preview": "^4.6.11",
+    "font-awesome": "^4.7.0",
     "html5-qrcode": "^2.3.8",
     "jsonwebtoken": "^9.0.2",
     "jwt-decode": "^3.1.2",
