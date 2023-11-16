@@ -50,7 +50,7 @@ a {
 .label__check {
   display: inline-block;
   border-radius: 50%;
-  border: 5px solid rgba(0,0,0,0.1);
+  border: 5px solid rgb(255, 0, 0);
   background: white;
   vertical-align: middle;
   margin-right: 20px;
